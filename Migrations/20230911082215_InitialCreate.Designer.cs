@@ -11,7 +11,7 @@ using RazorPagesMovie.Data;
 namespace RazorPagesMovie.Migrations
 {
     [DbContext(typeof(RazorPagesMovieContext))]
-    [Migration("20230911040536_InitialCreate")]
+    [Migration("20230911082215_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -30,6 +30,10 @@ namespace RazorPagesMovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Rating")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReleaseDate")
